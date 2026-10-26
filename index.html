@@ -115,6 +115,10 @@
   .route-card .mark { font-size: 30px; line-height: 1.2; text-align: center; margin: 2px 0; }
   .route-card.us-ok { border: 2px solid var(--correct-text); background: var(--correct-bg); }
   .route-card.us-ng { border: 2px solid var(--wrong-text); background: var(--wrong-bg); }
+  .us-row { display: flex; flex-direction: column; gap: 2px; border-radius: 10px; padding: 8px 10px; margin: 6px 0; font-size: var(--fs-label); line-height: 1.5; background: #fff; border: 2px solid; }
+  .us-row.ng { border-color: var(--wrong-text); }
+  .us-row.ok { border-color: var(--correct-text); background: var(--correct-bg); }
+  .us-row b { font-size: var(--fs-label); }
   .paths.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .eu-title { font-size: var(--fs-heading); color: var(--navy); margin: 26px 4px 10px; border-bottom: 3px solid var(--accent); padding-bottom: 4px; }
   .path { display: flex; flex-direction: column; align-items: stretch; min-width: 0; }
@@ -208,29 +212,33 @@
 <section class="card" id="us">
   <h2>アメリカ宛ての送り方</h2>
   <div class="step"><span class="n">1</span><span>何を送る？<small>関税は「何を送るか」と「どう送るか」で決まります。</small></span></div>
-  <div class="route-cards two">
-    <div class="route-card">
-      <h4>📚 本・CDなど</h4>
-      <p>もともと、関税がかからない品目です。</p>
+  <div class="arrow">▼</div>
+  <div class="paths two us-paths">
+    <div class="path p1">
+      <div class="pill">A　ふつうの商品</div>
+      <div class="arrow">▼</div>
+      <div class="goal">
+        <div class="gicon">🎮</div>
+        <div class="gtitle">ゲームなど</div>
+        <div class="us-row ng"><span>📦 SpeedPAK Economy</span><b>関税がかかる</b></div>
+        <div class="us-row ng"><span>📮 郵便</span><b>関税がかかる</b></div>
+        <p class="gsub">郵便なら、Zonosで関税を前払いします。</p>
+      </div>
+    </div>
+    <div class="path p2">
+      <div class="pill">B　本・CDなど</div>
+      <div class="arrow">▼</div>
+      <div class="goal">
+        <div class="gicon">📚</div>
+        <div class="gtitle">もともと関税がかからない品目</div>
+        <div class="us-row ng"><span>📦 SpeedPAK Economy</span><b>❌ 関税がかかる（一律）</b></div>
+        <div class="us-row ok"><span>📮 郵便</span><b>⭕️ 関税はかからない</b></div>
+        <p class="gsub">ただし、Zonosの手数料はかかります。</p>
+      </div>
     </div>
   </div>
   <div class="arrow">▼</div>
-  <div class="step"><span class="n">2</span><span>どう送る？<small>関税がかからない品目でも、送り方で変わります。</small></span></div>
-  <div class="route-cards two">
-    <div class="route-card us-ng">
-      <h4>📦 SpeedPAK Economy（CPaSS）</h4>
-      <p class="mark">❌</p>
-      <p><strong>関税がかかる</strong>（一律で請求されます）</p>
-    </div>
-    <div class="route-card us-ok">
-      <h4>📮 郵便（国際エアパケット）</h4>
-      <p class="mark">⭕️</p>
-      <p><strong>関税はかからない</strong></p>
-      <p>ただし、Zonosの手数料はかかります。</p>
-    </div>
-  </div>
-  <div class="arrow">▼</div>
-  <div class="step"><span class="n">3</span><span>郵便で送るなら<small>関税の前払い（Zonos）が必要です。</small></span></div>
+  <div class="step"><span class="n">2</span><span>A・Bどちらも、郵便で送るなら<small>関税の前払い（Zonos）が必要です。</small></span></div>
   <div class="route-cards two">
     <div class="route-card">
       <h4>🏤 どこで出せる？</h4>
