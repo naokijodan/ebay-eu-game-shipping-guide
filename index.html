@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EU宛てのゲーム、何で送る？</title>
+<title>EUにゲームを送るときの送り方ガイド</title>
 <style>
   :root {
     --accent: #1a73e8;
@@ -48,9 +48,6 @@
   .point-box {
     background: var(--accent-light); border: var(--border-w) solid var(--accent); border-radius: var(--radius-box);
     padding: var(--pad-roomy); margin: 16px 0; font-weight: bold; font-size: var(--fs-heading); color: #0b3d91; text-align: center;
-  }
-    background: #eeeeee; border: var(--border-w) solid #555; border-radius: var(--radius-band);
-    padding: 14px 16px; margin: 16px 0; text-align: center; font-weight: bold; font-size: var(--fs-label);
   }
   .caution-box { background: var(--wrong-bg); border: var(--border-w) solid var(--wrong-text); border-radius: var(--radius-box); padding: var(--pad-roomy); margin: 16px 0; }
   .ok-box { background: var(--correct-bg); border: var(--border-w) solid var(--correct-text); border-radius: var(--radius-box); padding: var(--pad-roomy); margin: 16px 0; }
@@ -104,100 +101,177 @@
   table.data.mark tr.gh1 th { background: var(--accent); }
   table.data.mark tr.gh2 th { background: var(--gray); }
   table.data.mark tr.gh3 th { background: var(--wrong-text); }
-  .now { display: inline-block; font-size: 11px; font-weight: bold; background: #fff3e0; color: #b45309; border: 1px solid #f0b46c; border-radius: 999px; padding: 0 6px; margin-left: 4px; white-space: nowrap; }
+  /* v2 visual */
+  .hero-lead { margin: 14px auto 0; max-width: 760px; font-size: 17px; font-weight: bold; line-height: 1.6; background: rgba(255,255,255,0.18); border-radius: 12px; padding: 8px 12px; }
+  .know { list-style: none; margin: 0; padding: 0; }
+  .know li { display: flex; gap: 10px; align-items: flex-start; margin: 8px 0; font-size: 17px; font-weight: bold; line-height: 1.6; }
+  .know .ic { flex: 0 0 auto; font-size: 22px; line-height: 1.4; }
+  .step { display: flex; align-items: center; gap: 10px; background: var(--accent-light); border: var(--border-w) solid var(--accent); border-radius: var(--radius-box); padding: 12px 14px; font-weight: bold; font-size: var(--fs-sub); color: #0b3d91; }
+  .step .n { flex: 0 0 auto; width: 32px; height: 32px; border-radius: 50%; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; }
+  .step small { display: block; font-weight: normal; font-size: var(--fs-note); color: #333; }
+  .arrow { text-align: center; font-size: 22px; line-height: 1.2; color: #888; margin: 4px 0; }
+  .paths { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 4px 0; }
+  .path { display: flex; flex-direction: column; align-items: stretch; min-width: 0; }
+  .pill { text-align: center; color: #fff; font-weight: bold; border-radius: 999px; padding: 6px 10px; font-size: var(--fs-label); line-height: 1.4; }
+  .path .arrow { margin: 2px 0; }
+  .goal { flex: 1; border-radius: var(--radius-box); padding: 14px; border: var(--border-w) solid; min-width: 0; }
+  .goal .gicon { font-size: 34px; line-height: 1.2; }
+  .goal .gtitle { font-weight: bold; font-size: var(--fs-sub); line-height: 1.5; margin: 4px 0 6px; }
+  .goal .gsub { font-size: var(--fs-note); color: #444; margin: 0 0 8px; line-height: 1.6; }
+  .chips { display: flex; flex-wrap: wrap; gap: 4px 5px; }
+  .chip { background: #fff; border: 1px solid #ccc; border-radius: 999px; padding: 0 8px; font-size: 13px; line-height: 1.7; }
+  .p1 .pill { background: var(--accent); } .p1 .goal { background: var(--accent-light); border-color: var(--accent); }
+  .p2 .pill { background: var(--gray); } .p2 .goal { background: #eceff1; border-color: var(--gray); }
+  .p3 .pill { background: var(--wrong-text); } .p3 .goal { background: var(--wrong-bg); border-color: var(--wrong-text); }
+  .qa { border-top: 1px solid #e3e3e3; padding: 14px 0; }
+  .qa:first-of-type { border-top: 0; }
+  .qa .qq { font-weight: bold; font-size: var(--fs-sub); line-height: 1.6; }
+  .qa .aa { font-weight: bold; font-size: 20px; line-height: 1.5; color: var(--correct-text); margin: 8px 0 2px; }
+  .qa .ss { font-size: var(--fs-note); color: #555; margin: 0; }
+  .memo { background: #fffbe6; border: 2px solid #f0d36b; border-radius: var(--radius-box); padding: 12px 16px; }
+  .memo h2 { border-left-color: #d4a017; color: #8a6d00; font-size: var(--fs-sub); margin-bottom: 6px; }
+  .memo ul { list-style: none; margin: 0; padding: 0; font-size: var(--fs-label); line-height: 1.6; }
+  .memo li { margin: 6px 0; }
+  .fee-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 14px 0; }
+  .fee-card { background: #fff; border: 2px solid var(--accent); border-radius: var(--radius-box); padding: 14px; min-width: 0; }
+  .fee-card h4 { margin: 0 0 6px; font-size: var(--fs-label); color: var(--navy); }
+  .fee-card .big { font-size: 24px; font-weight: bold; color: #0b3d91; line-height: 1.3; margin: 4px 0; }
+  .fee-card .big small { font-size: var(--fs-note); font-weight: normal; color: #333; display: block; }
+  .fee-card p { margin: 4px 0; font-size: var(--fs-note); line-height: 1.6; }
+  details.more { background: #fff; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); padding: 6px 20px; margin-bottom: 14px; }
+  details.more > summary { cursor: pointer; font-weight: bold; color: var(--accent); font-size: var(--fs-sub); padding: 12px 0; line-height: 1.5; }
+  details.more[open] > summary { border-bottom: 1px solid #e3e3e3; margin-bottom: 10px; }
+  .more-title { font-size: var(--fs-heading); font-weight: bold; color: var(--navy); margin: 22px 4px 10px; }
+  .jump { display: inline-block; margin-top: 12px; background: #fff; color: var(--accent); font-weight: bold; text-decoration: none; border-radius: 999px; padding: 6px 18px; }
+  @media (max-width: 700px) {
+    .paths, .fee-cards { grid-template-columns: 1fr; }
+    details.more { padding: 4px 14px; }
+    .path .arrow { display: block; }
+  }
 </style>
 </head>
 <body>
 <header class="page-title">
-  <h1>EU宛てのゲーム、何で送る？</h1>
-  <p class="subtitle">「Economy International Shipping」のポリシーで、SpeedPAK Economyと日本郵便をどう使い分けるか。Zonosが要るのはどんなときか。</p>
-  <p class="notice">公開日 2026-10-26</p>
+  <h1>EUにゲームを送るときの送り方ガイド</h1>
+  <p class="hero-lead">EUの人にゲームが売れた。何で送ればいい？<br>下の図と表を見れば、国ごとの送り方がわかります。</p>
+  <a class="jump" href="#table">▼ 国の表へ</a>
+  <p class="notice">公開日 2026-10-26 ／ 更新日 2026-10-26</p>
 </header>
 <main>
 
-<section class="card conclusion">
-  <h2>結論</h2>
-  <div class="ok-box">
-    <p class="q-line"><span class="q">Q1</span>ポリシーが「Economy International」でも、SpeedPAK Economyで送って大丈夫？</p>
-    <p><strong>答え　OKです。</strong>ポリシーが「Economy International Shipping」（日本郵便のエコノミーでの約束）なら、SpeedPAK Economyで送っても、日本郵便で送ってもかまいません。</p>
-    <p class="q-line"><span class="q">Q2</span>ゲームは、Zonosを使って送るべき？</p>
-    <p><strong>答え　ゲームだから郵便が必須、ということはありません。</strong>国ごとに安い方を選びます。郵便で送るときだけ、Zonosで関税の前払いが要ります。</p>
-    <p class="q-line"><span class="q">Q3</span>国ごとの送り方は、今までとどう変わる？</p>
-    <p><strong>答え　ドイツ・オーストリア・ベルギー・ポルトガルは今までどおりSpeedPAK。</strong>デンマーク・フィンランド・フランスは郵便（Zonos）も選べるようになりました。</p>
-    <ul class="intro-list">
-      <li><strong>チェコ：</strong>郵便ではDDPもDAPも使えないので、SpeedPAK Economyへ切り替えます（いちばん大きな変更）。</li>
-      <li><strong>「受取人払いだけOK」の11か国：</strong>郵便なら受取人払い（DAP）で送ります。</li>
-      <li><strong>「前払いOK ⭕️」の国のうち、今eパケットの8か国：</strong>郵便ならZonosで前払い（DDP）で送ります。</li>
-    </ul>
+<section class="card" id="know">
+  <h2>この記事でわかること</h2>
+  <ul class="know">
+    <li><span class="ic">🌍</span><span>売れた国ごとの、ゲームの送り方</span></li>
+    <li><span class="ic">💳</span><span>関税の前払い（Zonos）が要る国・要らない国</span></li>
+    <li><span class="ic">💴</span><span>Zonosの手数料はいくらか</span></li>
+  </ul>
+</section>
+
+<section class="card" id="flow">
+  <h2>送り方の決め方（3ステップ）</h2>
+  <div class="step"><span class="n">1</span><span>売れた国を見る</span></div>
+  <div class="arrow">▼</div>
+  <div class="step"><span class="n">2</span><span>下の表で、その国の印（⭕️／❌）を見る<small>印は、日本郵便の公式の表にもとづきます。</small></span></div>
+  <div class="arrow">▼</div>
+  <div class="step"><span class="n">3</span><span>印に合う送り方で送る</span></div>
+  <div class="arrow">▼</div>
+  <div class="paths">
+    <div class="path p1">
+      <div class="pill">前払いが ⭕️</div>
+      <div class="arrow">▼</div>
+      <div class="goal">
+        <div class="gicon">💳</div>
+        <div class="gtitle">郵便で送る<br>関税はZonosで前払い</div>
+        <p class="gsub">11か国。Zonos（ゾノス）は、関税の前払いを手伝う会社です。</p>
+        <div class="chips"><span class="chip">イタリア</span><span class="chip">エストニア</span><span class="chip">オランダ</span><span class="chip">スウェーデン</span><span class="chip">スペイン</span><span class="chip">スロバキア</span><span class="chip">デンマーク</span><span class="chip">フィンランド</span><span class="chip">フランス</span><span class="chip">マルタ</span><span class="chip">ルクセンブルク</span></div>
+      </div>
+    </div>
+    <div class="path p2">
+      <div class="pill">受取人払いだけ ⭕️</div>
+      <div class="arrow">▼</div>
+      <div class="goal">
+        <div class="gicon">📮</div>
+        <div class="gtitle">郵便で送る<br>関税は受け取る人が払う</div>
+        <p class="gsub">11か国。Zonosの前払いは使えません。</p>
+        <div class="chips"><span class="chip">アイルランド</span><span class="chip">キプロス</span><span class="chip">ギリシャ</span><span class="chip">クロアチア</span><span class="chip">スロベニア</span><span class="chip">ハンガリー</span><span class="chip">ブルガリア</span><span class="chip">ポーランド</span><span class="chip">ラトビア</span><span class="chip">リトアニア</span><span class="chip">ルーマニア</span></div>
+      </div>
+    </div>
+    <div class="path p3">
+      <div class="pill">両方 ❌</div>
+      <div class="arrow">▼</div>
+      <div class="goal">
+        <div class="gicon">📦</div>
+        <div class="gtitle">郵便では送れない<br>→ SpeedPAK Economy</div>
+        <p class="gsub">5か国。SpeedPAK Economyは、eBayの発送画面（CPaSS）から出す送り方です。</p>
+        <div class="chips"><span class="chip">オーストリア</span><span class="chip">チェコ</span><span class="chip">ドイツ</span><span class="chip">ベルギー</span><span class="chip">ポルトガル</span></div>
+      </div>
+    </div>
   </div>
-  <p class="small-note">国際郵便の対応国は変わることがあります。送る前に公式の表で確認してください（リンクは下にあります）。</p>
+  <p class="small-note">国際郵便の対応国は変わることがあります。送る前に公式の表で確認してください。</p>
 </section>
 
 <section class="card" id="table">
-  <h2>まず、この表を見てください（日本郵便の国別対応表・EU）</h2>
-  <p>ヨーロッパ宛ての荷物を、郵便で送れるかどうかの表です。⭕️は送れる、❌は送れません。eBayが150ユーロ未満の注文でVATを徴収する扱い（IOSS有り）の場合です。</p>
-  <p class="small-note">「今SpeedPAK」は、今CPaSSのエコノミー（SpeedPAK Economy）で送っている国です。</p>
-  <div class="table-wrap"><table class="data mark"><thead><tr><th>国</th><th>郵便で関税を前払い<br><span class="sub">（DDP・Zonos）</span></th><th>郵便で受取人払い<br><span class="sub">（DAP）</span></th></tr></thead><tbody><tr class="gh gh1"><th colspan="3">前払いOK ⭕️（11か国）</th></tr><tr><th scope="row">イタリア</th><td class="mk ok">⭕️</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">エストニア</th><td class="mk ok">⭕️</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">オランダ</th><td class="mk ok">⭕️</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">スウェーデン</th><td class="mk ok">⭕️</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">スペイン</th><td class="mk ok">⭕️</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">スロバキア</th><td class="mk ok">⭕️</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">デンマーク <span class="now">今SpeedPAK</span></th><td class="mk ok">⭕️</td><td class="mk ng">❌</td></tr><tr><th scope="row">フィンランド <span class="now">今SpeedPAK</span></th><td class="mk ok">⭕️</td><td class="mk ng">❌</td></tr><tr><th scope="row">フランス <span class="now">今SpeedPAK</span></th><td class="mk ok">⭕️</td><td class="mk ng">❌</td></tr><tr><th scope="row">マルタ</th><td class="mk ok">⭕️</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">ルクセンブルク</th><td class="mk ok">⭕️</td><td class="mk ng">❌</td></tr><tr class="gh gh2"><th colspan="3">受取人払いだけOK（11か国）</th></tr><tr><th scope="row">アイルランド</th><td class="mk ng">❌</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">キプロス</th><td class="mk ng">❌</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">ギリシャ</th><td class="mk ng">❌</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">クロアチア</th><td class="mk ng">❌</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">スロベニア</th><td class="mk ng">❌</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">ハンガリー</th><td class="mk ng">❌</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">ブルガリア</th><td class="mk ng">❌</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">ポーランド</th><td class="mk ng">❌</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">ラトビア</th><td class="mk ng">❌</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">リトアニア</th><td class="mk ng">❌</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">ルーマニア</th><td class="mk ng">❌</td><td class="mk ok">⭕️</td></tr><tr class="gh gh3"><th colspan="3">郵便は両方❌ → SpeedPAK（5か国）</th></tr><tr><th scope="row">オーストリア <span class="now">今SpeedPAK</span></th><td class="mk ng">❌</td><td class="mk ng">❌</td></tr><tr><th scope="row">チェコ</th><td class="mk ng">❌</td><td class="mk ng">❌</td></tr><tr><th scope="row">ドイツ <span class="now">今SpeedPAK</span></th><td class="mk ng">❌</td><td class="mk ng">❌</td></tr><tr><th scope="row">ベルギー <span class="now">今SpeedPAK</span></th><td class="mk ng">❌</td><td class="mk ng">❌</td></tr><tr><th scope="row">ポルトガル <span class="now">今SpeedPAK</span></th><td class="mk ng">❌</td><td class="mk ng">❌</td></tr></tbody></table></div>
+  <h2>国の表（日本郵便の国別対応表・EU）</h2>
+  <p>⭕️は郵便で送れる、❌は送れません。eBayが150ユーロ未満の注文でVAT（ヨーロッパの消費税）を集める扱い（IOSS有り）の場合の表です。</p>
+  <div class="table-wrap"><table class="data mark"><thead><tr><th>国</th><th>郵便で関税を前払い<br><span class="sub">（Zonosを使う）</span></th><th>郵便で関税を受取人払い</th></tr></thead><tbody><tr class="gh gh1"><th colspan="3">前払いOK ⭕️（11か国）→ 郵便なら、Zonosで関税を前払いして送れる</th></tr><tr><th scope="row">イタリア</th><td class="mk ok">⭕️</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">エストニア</th><td class="mk ok">⭕️</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">オランダ</th><td class="mk ok">⭕️</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">スウェーデン</th><td class="mk ok">⭕️</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">スペイン</th><td class="mk ok">⭕️</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">スロバキア</th><td class="mk ok">⭕️</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">デンマーク</th><td class="mk ok">⭕️</td><td class="mk ng">❌</td></tr><tr><th scope="row">フィンランド</th><td class="mk ok">⭕️</td><td class="mk ng">❌</td></tr><tr><th scope="row">フランス</th><td class="mk ok">⭕️</td><td class="mk ng">❌</td></tr><tr><th scope="row">マルタ</th><td class="mk ok">⭕️</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">ルクセンブルク</th><td class="mk ok">⭕️</td><td class="mk ng">❌</td></tr><tr class="gh gh2"><th colspan="3">受取人払いだけOK（11か国）→ 郵便なら、関税は受け取る人払いで送れる</th></tr><tr><th scope="row">アイルランド</th><td class="mk ng">❌</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">キプロス</th><td class="mk ng">❌</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">ギリシャ</th><td class="mk ng">❌</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">クロアチア</th><td class="mk ng">❌</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">スロベニア</th><td class="mk ng">❌</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">ハンガリー</th><td class="mk ng">❌</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">ブルガリア</th><td class="mk ng">❌</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">ポーランド</th><td class="mk ng">❌</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">ラトビア</th><td class="mk ng">❌</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">リトアニア</th><td class="mk ng">❌</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">ルーマニア</th><td class="mk ng">❌</td><td class="mk ok">⭕️</td></tr><tr class="gh gh3"><th colspan="3">郵便は両方❌（5か国）→ 郵便では送れない → SpeedPAK Economy</th></tr><tr><th scope="row">オーストリア</th><td class="mk ng">❌</td><td class="mk ng">❌</td></tr><tr><th scope="row">チェコ</th><td class="mk ng">❌</td><td class="mk ng">❌</td></tr><tr><th scope="row">ドイツ</th><td class="mk ng">❌</td><td class="mk ng">❌</td></tr><tr><th scope="row">ベルギー</th><td class="mk ng">❌</td><td class="mk ng">❌</td></tr><tr><th scope="row">ポルトガル</th><td class="mk ng">❌</td><td class="mk ng">❌</td></tr></tbody></table></div>
   <p class="source-note">出典：日本郵便 お知らせ（続報4、2026年10月1日）の国別表（EU27か国分を抜き出しています）<br>
     👉 <a href="https://www.post.japanpost.jp/service/send/oversea/information/2026/1001_01.html" target="_blank" rel="noopener">https://www.post.japanpost.jp/service/send/oversea/information/2026/1001_01.html</a></p>
 </section>
 
-<section class="card" id="terms">
-  <h2>先に、言葉の説明</h2>
-  <ul class="intro-list">
-    <li><strong>DDP：</strong>送り主が関税などを前払いして送ること。</li>
-    <li><strong>DAP：</strong>受け取る人が関税などを払うこと。</li>
+<section class="card conclusion" id="answers">
+  <h2>結論（Q と答え）</h2>
+  <div class="qa">
+    <div class="qq"><span class="q">Q1</span>送料の設定（シッピングポリシー）は「Economy International」のままでいい？</div>
+    <div class="aa">答え　OKです。</div>
+    <p class="ss">郵便でもSpeedPAK Economyでも送れます（Economy Internationalは、日本郵便のエコノミーでの約束です）。</p>
+  </div>
+  <div class="qa">
+    <div class="qq"><span class="q">Q2</span>ゲームは、Zonosを使わないといけない？</div>
+    <div class="aa">答え　必須ではありません。</div>
+    <p class="ss">Zonosが要るのは、前払いが⭕️の国へ郵便で送るときだけです。</p>
+  </div>
+  <div class="qa">
+    <div class="qq"><span class="q">Q3</span>国ごとに何で送ればいい？</div>
+    <div class="aa">答え　上の表の印で決めます。</div>
+    <p class="ss">⭕️なら郵便、両方❌ならSpeedPAK Economyです。</p>
+  </div>
+</section>
+
+<section class="card memo" id="terms">
+  <h2>ことばメモ</h2>
+  <ul>
+    <li><strong>関税の前払い（DDP）：</strong>送る人が、関税などを先に払うこと。</li>
+    <li><strong>受取人払い（DAP）：</strong>受け取る人が、関税などを払うこと。</li>
     <li><strong>VAT：</strong>ヨーロッパの消費税。</li>
-    <li><strong>IOSS有り：</strong>eBayが150ユーロ未満の注文でVATを集めている扱い。日本郵便の国別の表は、この区分で分かれています。</li>
+    <li><strong>IOSS有り：</strong>eBayが150ユーロ未満の注文でVATを集めている扱い。</li>
+    <li><strong>Zonos（ゾノス）：</strong>日本郵便が認めた、関税前払いの会社。</li>
+    <li><strong>SpeedPAK Economy：</strong>CPaSSから出す、エコノミーの送り方。</li>
     <li><strong>CPaSS：</strong>SpeedPAKを出すときの、eBayの発送の注文画面。</li>
-    <li><strong>Zonos（ゾノス）：</strong>日本郵便が認めた、関税前払いの事業者。</li>
+    <li><strong>シッピングポリシー：</strong>eBayの送料とお届け日数の設定。</li>
     <li><strong>CBP：</strong>米国税関・国境警備局。</li>
   </ul>
 </section>
 
-<section class="card" id="q1">
-  <h2><span class="q">Q1</span>ポリシーが「Economy International」でも、SpeedPAK Economyで送って大丈夫？</h2>
-  <p>大丈夫です。ポリシーは「お届け日数の約束」だからです。考え方は、セミナー解説記事のPART4と同じです。</p>
-  <div class="point-box">郵便で約束しておけば、SpeedPAKで送ってもよい。逆は違反です。</div>
-  <div class="ok-box">
-    <h3>○　日本郵便のエコノミーで約束（Economy International）</h3>
-    <p>約束の日数は、SpeedPAK Economyよりも長めです。約束より速く届く分はOKなので、郵便で送っても、SpeedPAK Economyで送ってもかまいません。</p>
-  </div>
-  <div class="caution-box">
-    <h3>×　SpeedPAK Economyで約束</h3>
-    <p>約束の日数が短いので、郵便で送ると約束より遅れるおそれがあり、ポリシー違反になります。</p>
-  </div>
-  <p class="small-note">アメリカ向けの例では、郵便側の約束が11〜23営業日、SpeedPAK Economyが8〜12営業日です。ヨーロッパ向けも同じ考え方ですが、日数は異なります（ヨーロッパ向けの日数は、この記事では未確認です）。</p>
-  <p>つまり、ポリシーを「Economy International」にしておくのは、国ごとに「安い方・使える方」を選べるようにするためです。国によっては郵便が使えず、SpeedPAKで送るしかありません（Q3の表）。</p>
-  <p class="source-note">出典：セミナー解説記事 PART4 a・b</p>
-</section>
-
-
-
-<section class="card" id="q2">
-  <h2><span class="q">Q2</span>ゲームは、Zonosを使って送るべき？</h2>
-  <h3>ZonosはDDPのために使います</h3>
-  <p>Zonos（ゾノス）は、関税を前払いする（DDPにする）ためのサービスです。日本郵便が推奨する認定事業者の1つで、郵便で送るときの「関税の前払い」に使います（日本郵便のお知らせより）。</p>
-  <ul class="intro-list">
-    <li><strong>要る場合：</strong>上の表で「前払い」が⭕️の国へ、郵便で、DDPで送るとき。</li>
-    <li><strong>要らない場合：</strong>SpeedPAK Economyで送るとき（CPaSSで出します）。</li>
-    <li><strong>受取人払い（DAP）の国：</strong>Zonosの前払いはできません。受取人が関税等を払う形で、郵便で差し出します。</li>
-  </ul>
-  <h3>手数料は「どの方法でラベルを作るか」で大きく変わります</h3>
-  <p>同じZonosでも、ラベルの作り方で手数料が違います。なお日本郵便は、免税の場合でも手数料が発生すると案内しています（2026年10月14日のお知らせ）。</p>
-  <div class="route-cards">
-    <div class="route-card">
+<section class="card" id="fee">
+  <h2>Zonosの手数料はいくら？</h2>
+  <p>同じZonosでも、ラベルの作り方で手数料が変わります。日本郵便は、免税の場合でも手数料が発生すると案内しています（2026年10月14日のお知らせ）。</p>
+  <div class="fee-cards">
+    <div class="fee-card">
       <h4>① Zonos Prepay アプリ</h4>
-      <p><strong>Zonosの手数料：</strong>金額は公開されていません（利用者の報告では、1件あたり数百円〜750円ほど）。日本郵便の案内では「通関手数料＋為替コスト」です。</p>
+      <div class="big">非公開<small>利用者の報告では、1件あたり数百円〜750円ほど</small></div>
+      <p><strong>Zonosの手数料：</strong>金額は公開されていません。日本郵便の案内では「通関手数料＋為替コスト」です。</p>
       <p><strong>ラベル作成サービスの料金：</strong>公開されていません</p>
     </div>
-    <div class="route-card">
+    <div class="fee-card">
       <h4>② Zonos API・ダッシュボード</h4>
+      <div class="big">1.69ドル<small>＋ 関税の10%</small></div>
       <p><strong>Zonosの手数料：</strong>1.69ドル＋関税の10%。ヨーロッパ向けは、さらに通関の追加料金がかかります。</p>
       <p><strong>ラベル作成サービスの料金：</strong>なし</p>
     </div>
-    <div class="route-card">
+    <div class="fee-card">
       <h4>③ Ship&amp;co 経由</h4>
+      <div class="big">1.69ドル<small>＋ 関税の10%（②と同じ）</small></div>
       <p><strong>Zonosの手数料：</strong>②と同じ。</p>
       <p><strong>ラベル作成サービスの料金：</strong>Ship&amp;coの月額（1,100〜3,300円）と、送り状1枚18〜22円（税込）。</p>
     </div>
@@ -209,9 +283,41 @@
   </ul>
   <div class="plain-box">
     <h3>ヨーロッパ向けでZonosを使うときの注意</h3>
-    <p>eBayがVATを集めた注文は、ZonosにIOSS番号（eBayの注文に載っている番号）を渡す必要があります。渡さないと、Zonos側でVATがもう一度計算されました（筆者の実測。スペイン宛てで、渡さない場合はVAT 10.16ドル、渡した場合は0ドル）。アプリやShip&amp;coで、この番号をどう入れるかは、それぞれの画面で確認してください。</p>
+    <p>eBayがVATを集めた注文は、ZonosにIOSS番号（eBayの注文に載っている番号）を渡す必要があります。渡さないと、Zonos側でVATがもう一度計算されました（筆者の実測。スペイン宛てで、渡さない場合はVAT 10.16ドル、渡した場合は0ドル）。</p>
+    <p>アプリやShip&amp;coで、この番号をどう入れるかは、それぞれの画面で確認してください。</p>
   </div>
   <p class="small-note">Ship&amp;coの料金は Ship&amp;co の料金ページ、②の手数料は筆者のZonosアカウントの料金表示、スペイン向けの金額は本番発送の記録によります。郵便料金そのものの払い方は、作り方ごとに確認してください。料金は変わることがあります。</p>
+  <p class="source-note">出典：日本郵便 お知らせ（2026年10月14日）</p>
+</section>
+
+<div class="more-title">くわしく知りたい人へ</div>
+
+<details class="more" id="q1">
+  <summary>Q1 の理由：なぜ「Economy International」のままでいいの？</summary>
+  <p>ポリシーは「お届け日数の約束」だからです。考え方は、セミナー解説記事のPART4と同じです。</p>
+  <div class="point-box">郵便で約束しておけば、SpeedPAKで送ってもよい。逆は違反です。</div>
+  <div class="ok-box">
+    <h3>○　日本郵便のエコノミーで約束（Economy International）</h3>
+    <p>約束の日数は、SpeedPAK Economyよりも長めです。約束より速く届く分はOKなので、郵便でもSpeedPAK Economyでもかまいません。</p>
+  </div>
+  <div class="caution-box">
+    <h3>×　SpeedPAK Economyで約束</h3>
+    <p>約束の日数が短いので、郵便で送ると約束より遅れるおそれがあり、ポリシー違反になります。</p>
+  </div>
+  <p class="small-note">アメリカ向けの例では、郵便側の約束が11〜23営業日、SpeedPAK Economyが8〜12営業日です。ヨーロッパ向けも同じ考え方ですが、日数は異なります（ヨーロッパ向けの日数は、この記事では未確認です）。</p>
+  <p>ポリシーを「Economy International」にしておくのは、国ごとに「安い方・使える方」を選べるようにするためです。国によっては郵便が使えず、SpeedPAKで送るしかありません。</p>
+  <p class="source-note">出典：セミナー解説記事 PART4 a・b</p>
+</details>
+
+<details class="more" id="q2">
+  <summary>Q2 の理由：Zonosが要る場合・要らない場合</summary>
+  <ul class="intro-list">
+    <li><strong>要る場合：</strong>表で「前払い」が⭕️の国へ、郵便で、関税を前払い（DDP）で送るとき。</li>
+    <li><strong>要らない場合：</strong>SpeedPAK Economyで送るとき（CPaSSで出します）。</li>
+    <li><strong>受取人払い（DAP）の国：</strong>Zonosの前払いはできません。受取人が関税等を払う形で、郵便で差し出します。</li>
+  </ul>
+  <p class="small-note">受取人払い（DAP）の国で、eBayがVATを集めた後に買い手へ追加の請求が出るかどうかは確認できていません。</p>
+  <p>Zonosは、日本郵便が推奨する認定事業者の1つです（日本郵便のお知らせより）。</p>
   <div class="plain-box">
     <h3>どの郵便局で出せる？（事実）</h3>
     <ul class="intro-list">
@@ -221,52 +327,35 @@
   </div>
   <div class="ok-box">
     <h3>私の考え</h3>
-    <p>一般の郵便局でもDDPで出せるようになったので、ゲーム・CD・漫画のような小さくて軽いものは、国際郵便で送るほうがよいと考えています。ただし、SpeedPAK Economyが悪いわけではありません。ポリシーは「Economy International」のままで、国ごとに送料と手数料を比べて選んでください。</p>
+    <p>一般の郵便局でもDDPで出せるようになったので、ゲーム・CD・漫画のような小さくて軽いものは、国際郵便で送るほうがよいと考えています。ただし、SpeedPAK Economyが悪いわけではありません。</p>
+    <p>ポリシーは「Economy International」のままで、国ごとに送料と手数料を比べて選んでください。</p>
   </div>
   <p class="small-note">「私の考え」は筆者の見解です。公式の案内ではありません。</p>
   <p class="source-note">出典：日本郵便 お知らせ（2026年10月14日）、セミナー解説記事 PART4 e</p>
-</section>
+</details>
 
-<section class="card" id="q3">
-  <h2><span class="q">Q3</span>国別の送り方（今の送り方 → これから）</h2>
-  <p>今の送り方は、「アメリカ・オーストリア・デンマーク・ドイツ・フィンランド・フランス・ベルギー・ポルトガルはCPaSSのエコノミー（SpeedPAK Economy）、それ以外は国際郵便」というやり方を前提にしています。</p>
-  <p>郵便で送れるかどうかは、日本郵便の公式の表（IOSS有り＝eBayが150ユーロ未満の注文でVATを徴収する扱い）で決まります。</p>
-  <p class="small-note">ゲームをEU宛てに送るときの、国別の送り方（日本郵便公式の国別表にもとづく）。表は横にスクロールできます。</p>
-  <div class="table-wrap"><table class="data route">
-  <thead><tr><th>国</th><th>今の送り方</th><th>これから（おすすめ）</th><th>理由</th></tr></thead><tbody>
-  <tr class="r-us"><th scope="row">アメリカ<br><span class="small-note">本記事の対象外</span></th><td>CPaSSエコノミー</td><td>この記事では扱いません（変わりません）</td><td>この記事はEU宛ての説明です。アメリカ宛ての郵便の最新ルールは、下の「2026年10月14日の公式のお知らせ」を見てください。</td></tr>
-  <tr class="r-ddp"><th scope="row">デンマーク<br>フィンランド<br>フランス</th><td>CPaSSエコノミー</td><td>郵便（Zonosで前払い・DDP）も選べる。国際エアパケットとSpeedPAKを比べて、安い方</td><td>公式の表で、上の表で「前払い」が⭕️の国です（Zonosで前払いして郵便で送れる）。</td></tr>
-  <tr class="r-none"><th scope="row">ドイツ<br>オーストリア<br>ベルギー<br>ポルトガル</th><td>CPaSSエコノミー</td><td>これまでどおりSpeedPAK Economy</td><td>公式の表で、この4か国は「両方❌」の国です（IOSS有りの注文では郵便で差し出せない）。</td></tr>
-  <tr class="r-ddp"><th scope="row">それ以外のEU諸国<br>（1）「前払いOK ⭕️」の国<br><span class="small-note">イタリア、エストニア、オランダ、スウェーデン、スペイン、スロバキア、マルタ、ルクセンブルク</span></th><td>国際郵便（eパケット）</td><td>郵便（Zonosで前払い・DDP）。SpeedPAKと比べて安い方</td><td>上の表で「前払い」が⭕️です。</td></tr>
-  <tr class="r-dap"><th scope="row">それ以外のEU諸国<br>（2）「受取人払いだけOK」の国<br><span class="small-note">アイルランド、キプロス、ギリシャ、クロアチア、スロベニア、ハンガリー、ブルガリア、ポーランド、ラトビア、リトアニア、ルーマニア</span></th><td>国際郵便（eパケット）</td><td>郵便（受取人払い・DAP）で差し出せる。SpeedPAKと比べて安い方</td><td>上の表で「前払い」が❌、「受取人払い」が⭕️です。Zonosの前払いはできませんが、受取人が関税等を払う形で差し出せます。</td></tr>
-  <tr class="r-none"><th scope="row">それ以外のEU諸国<br>（3）「両方❌」の国<br><span class="small-note">チェコ</span></th><td>国際郵便（eパケット）</td><td>SpeedPAK Economy</td><td>上の表で「両方❌」です（IOSS有りの注文では郵便で差し出せない）。今までチェコ宛てを郵便で送っていた場合は、見直してください。</td></tr>
-  </tbody></table></div>
-  <div class="legend"><span class="l1">前払いOK ⭕️</span><span class="l2">受取人払いだけOK</span><span class="l3">両方❌ → SpeedPAK</span></div>
-  <p class="small-note">受取人払い（DAP）の国で、eBayがVATを集めた後に買い手へ追加の請求が出るかどうかは確認できていません。</p>
-  <p class="small-note">EU27か国を、上の表ですべて分類しています（セミナー解説記事の公式転記表のとおり）。国際郵便のほうの呼び名は、この記事では公式の表記に合わせて「国際エアパケット」と書きます。ご自身が「国際eパケット」と呼んでいる荷物との違いは、この記事では未確認です。</p>
-  <div class="plain-box">
-    <h3>150ユーロを超える注文</h3>
-    <p>EUは150ユーロ（イギリスは135ポンド）を超えると、SpeedPAK Economyは使えず、SpeedPAK Expeditedで送ります。判定は注文単位です。ゲームの高額品に注意してください。</p>
-  </div>
-  <p class="source-note">出典：日本郵便 お知らせ（続報4、2026年10月1日）の国別表（セミナー解説記事 PART4 c に転記）。「今の送り方」は、お問い合わせの内容にもとづきます。<br>
-    👉 <a href="https://www.post.japanpost.jp/service/send/oversea/information/2026/1001_01.html" target="_blank" rel="noopener">https://www.post.japanpost.jp/service/send/oversea/information/2026/1001_01.html</a></p>
-</section>
+<details class="more" id="over150">
+  <summary>150ユーロを超える注文のとき</summary>
+  <p>EUは150ユーロ（イギリスは135ポンド）を超えると、SpeedPAK Economyは使えず、SpeedPAK Expeditedで送ります。判定は注文単位です。</p>
+  <p>ゲームの高額品に注意してください。</p>
+</details>
 
-<section class="card" id="airpacket">
-  <h2>「国際エアパケットの方が安いことが多い」は本当？</h2>
-  <p>お問い合わせへの回答では、「ゲームはCPaSSエコノミーでも大丈夫ですが、国際エアパケットが使える国では、そちらのほうが安いことが多い」とのことでした。</p>
-  <p>この記事では、安さの金額は書きません。送料は重さと国で変わるため、公式の料金表で、手元のゲームの重さで比べてください。</p>
+<details class="more" id="airpacket">
+  <summary>「国際エアパケットの方が安いことが多い」は本当？</summary>
+  <p>「ゲームはCPaSSエコノミーでも大丈夫ですが、国際エアパケットが使える国では、そちらのほうが安いことが多い」と言われています。この記事では、安さの金額は書きません。</p>
+  <p>送料は重さと国で変わるため、公式の料金表で、手元のゲームの重さで比べてください。</p>
   <ul class="intro-list">
     <li>日本郵便の料金表：ヨーロッパは「第3地帯」です。</li>
     <li>2027年2月1日から料金が改定されます（国際エアパケットも対象）。新料金表は、セミナー解説記事のPART4 dに転記しています。</li>
     <li>SpeedPAK Economyの送料は、CPaSSで見積もりを出して比べます。</li>
   </ul>
+  <p class="small-note">国際郵便のほうの呼び名は、この記事では公式の表記に合わせて「国際エアパケット」と書きます。「国際eパケット」と呼ばれる荷物との違いは、この記事では未確認です。</p>
   <p class="link-line">👉 日本郵便の改定の公式ページ：<a href="https://www.post.japanpost.jp/service/send/oversea/information/fee_revision_2027/" target="_blank" rel="noopener">https://www.post.japanpost.jp/service/send/oversea/information/fee_revision_2027/</a></p>
   <p class="link-line">👉 セミナー解説記事（PART4 d 料金表）：<a href="https://naokijodan.github.io/ebay-seminar-20261025-guide/#p4d" target="_blank" rel="noopener">https://naokijodan.github.io/ebay-seminar-20261025-guide/#p4d</a></p>
-</section>
+</details>
 
-<section class="card" id="oct14">
-  <h2>2026年10月14日の公式のお知らせ：一般の郵便局でも関税前払い（DDP）で出せる？</h2>
+<details class="more" id="oct14">
+  <summary>2026年10月14日の公式のお知らせ（アメリカ宛ての話）</summary>
   <p>日本郵便の2026年10月14日のお知らせは、「米国宛て郵便物の引受け対象の拡大」です。公式ページが言っていることは、次のとおりです。</p>
   <ul class="intro-list">
     <li>2026年10月15日から、米国宛て郵便物の引受けを、原則としてすべての郵便局に拡大します。国際郵便を取り扱わない簡易郵便局は除きます。</li>
@@ -276,23 +365,25 @@
   </ul>
   <div class="caution-box">
     <h3>範囲に注意</h3>
-    <p>このお知らせは<strong>アメリカ宛て</strong>の話です。EU宛てが一般の郵便局で出せるかは、このページには書かれていません。EU宛てについては、セミナー解説記事に「ヨーロッパ向けは、国際郵便を扱うすべての郵便局で差し出せます」とあります（日本郵便の国別のお知らせにもとづく記載）。窓口で出す前に、念のため確認してください。</p>
+    <p>このお知らせは<strong>アメリカ宛て</strong>の話です。EU宛てが一般の郵便局で出せるかは、このページには書かれていません。</p>
+    <p>EU宛てについては、セミナー解説記事に「ヨーロッパ向けは、国際郵便を扱うすべての郵便局で差し出せます」とあります（日本郵便の国別のお知らせにもとづく記載）。窓口で出す前に、念のため確認してください。</p>
   </div>
   <p class="source-note">出典：日本郵便 お知らせ「米国宛て郵便物の引受け対象の拡大」（2026年10月14日）<br>
     👉 <a href="https://www.post.japanpost.jp/service/send/oversea/information/2026/1014_01.html" target="_blank" rel="noopener">https://www.post.japanpost.jp/service/send/oversea/information/2026/1014_01.html</a></p>
-</section>
+</details>
 
-<section class="card" id="todo">
-  <h2>やることチェックリスト</h2>
+<details class="more" id="todo">
+  <summary>やることチェックリスト</summary>
   <ol class="points">
-    <li><strong>ポリシーの約束を確認します。</strong>「Economy International」なら、郵便でもSpeedPAKでもOKです。SpeedPAK Economyで約束しているポリシーは、郵便では送れません。</li>
-    <li><strong>国ごとに送り方を決めます。</strong>ドイツ・オーストリア・ベルギー・ポルトガル・チェコはSpeedPAK。それ以外は、郵便とSpeedPAKの安い方を選びます。</li>
-    <li><strong>上の表で「前払い」が⭕️の国は、Zonosで関税を前払いします。</strong>受取人払い（DAP）の国は、Zonosの前払いは要りません。</li>
+    <li><strong>売れた国の印を、表で見ます。</strong></li>
+    <li><strong>前払いが⭕️の国は、郵便で送ります。</strong>関税はZonosで前払いします。</li>
+    <li><strong>受取人払いだけ⭕️の国は、郵便で送ります。</strong>Zonosの前払いは要りません。</li>
+    <li><strong>両方❌の国は、SpeedPAK Economyで送ります。</strong></li>
+    <li><strong>郵便で送れる国は、国際エアパケットとSpeedPAK Economyの送料を、実際の重さで比べます。</strong></li>
     <li><strong>150ユーロを超える注文は、SpeedPAK Expeditedで送ります。</strong></li>
-    <li><strong>国際エアパケットとSpeedPAK Economyの送料を、実際の重さで比べます。</strong></li>
     <li><strong>対応国は、送る前に公式の表で確認します。</strong></li>
   </ol>
-</section>
+</details>
 
 <section class="card" id="links">
   <h2>関連リンク</h2>
@@ -317,7 +408,7 @@
     <li>日本郵便 国際郵便料金の一部改定のお知らせ（2027年2月1日から）</li>
   </ul>
   <p>国別の対応は2026年10月12日時点の公式資料にもとづきます。最新は公式ページで確認してください。</p>
-  <p class="center">公開日 2026-10-26</p>
+  <p class="center">公開日 2026-10-26 ／ 更新日 2026-10-26</p>
 </footer>
 </body>
 </html>
