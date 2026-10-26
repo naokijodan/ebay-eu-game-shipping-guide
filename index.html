@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EU宛てエコノミー発送の送り方ガイド</title>
+<title>エコノミー発送の送り方ガイド（アメリカ・EU）</title>
 <style>
   :root {
     --accent: #1a73e8;
@@ -111,6 +111,12 @@
   .step small { display: block; font-weight: normal; font-size: var(--fs-note); color: #333; }
   .arrow { text-align: center; font-size: 22px; line-height: 1.2; color: #888; margin: 4px 0; }
   .paths { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 4px 0; }
+  .route-cards.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .route-card .mark { font-size: 30px; line-height: 1.2; text-align: center; margin: 2px 0; }
+  .route-card.us-ok { border: 2px solid var(--correct-text); background: var(--correct-bg); }
+  .route-card.us-ng { border: 2px solid var(--wrong-text); background: var(--wrong-bg); }
+  .paths.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .eu-title { font-size: var(--fs-heading); color: var(--navy); margin: 26px 4px 10px; border-bottom: 3px solid var(--accent); padding-bottom: 4px; }
   .path { display: flex; flex-direction: column; align-items: stretch; min-width: 0; }
   .pill { text-align: center; color: #fff; font-weight: bold; border-radius: 999px; padding: 6px 10px; font-size: var(--fs-label); line-height: 1.4; }
   .path .arrow { margin: 2px 0; }
@@ -144,7 +150,7 @@
   .more-title { font-size: var(--fs-heading); font-weight: bold; color: var(--navy); margin: 22px 4px 10px; }
   .jump { display: inline-block; margin-top: 12px; background: #fff; color: var(--accent); font-weight: bold; text-decoration: none; border-radius: 999px; padding: 6px 18px; }
   @media (max-width: 700px) {
-    .paths, .fee-cards { grid-template-columns: 1fr; }
+    .paths, .paths.two, .fee-cards, .route-cards.two { grid-template-columns: 1fr; }
     details.more { padding: 4px 14px; }
     .path .arrow { display: block; }
   }
@@ -152,27 +158,111 @@
 </head>
 <body>
 <header class="page-title">
-  <h1>EU宛てエコノミー発送の送り方ガイド</h1>
-  <p class="hero-lead">EUの人に商品が売れた。エコノミーで、何で送ればいい？<br>下の図と表を見れば、国ごとの送り方がわかります。</p>
-  <a class="jump" href="#table">▼ 国の表へ</a>
+  <h1>エコノミー発送の送り方ガイド（アメリカ・EU）</h1>
+  <p class="hero-lead">アメリカかEUの人に商品が売れた。エコノミーで、何で送ればいい？<br>下の図と表を見れば、送り方がわかります。</p>
+  <a class="jump" href="#start">▼ 送り方の入り口へ</a>
   <p class="notice">公開日 2026-10-26 ／ 更新日 2026-10-26</p>
 </header>
 <main>
 
-<p class="small-note">エコノミー発送の基本は<a href="https://naokijodan.github.io/ebay-economy-shipping-guide/" target="_blank" rel="noopener">『エコノミー発送まるわかりガイド』</a>、この記事はそのEU編です。</p>
+<p class="small-note">エコノミー発送の基本は<a href="https://naokijodan.github.io/ebay-economy-shipping-guide/" target="_blank" rel="noopener">『エコノミー発送まるわかりガイド』</a>、この記事はアメリカ・EUの国別の送り方です。</p>
+
+<section class="card" id="start">
+  <h2>まず、売れた国は？</h2>
+  <div class="step"><span class="n">1</span><span>売れた国を見る<small>下の2つから選んでください。</small></span></div>
+  <div class="arrow">▼</div>
+  <div class="paths two">
+    <div class="path p1">
+      <div class="pill">アメリカ</div>
+      <div class="arrow">▼</div>
+      <div class="goal">
+        <div class="gicon">🇺🇸</div>
+        <div class="gtitle">アメリカ編へ</div>
+        <p class="gsub">郵便なら、Zonosで関税を前払い。10月15日から一般の郵便局でも出せます。</p>
+        <a class="jump" href="#us">▼ アメリカ編へ</a>
+      </div>
+    </div>
+    <div class="path p2">
+      <div class="pill">EU</div>
+      <div class="arrow">▼</div>
+      <div class="goal">
+        <div class="gicon">🇪🇺</div>
+        <div class="gtitle">EU編へ（3ステップ）</div>
+        <p class="gsub">国ごとの⭕️❌の表で、送り方を決めます。</p>
+        <a class="jump" href="#flow">▼ EU編へ</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="card" id="know">
   <h2>この記事でわかること</h2>
   <ul class="know">
-    <li><span class="ic">🌍</span><span>売れた国ごとの、エコノミーでの送り方</span></li>
+    <li><span class="ic">🌍</span><span>アメリカ・EUの、エコノミーでの送り方</span></li>
     <li><span class="ic">💳</span><span>関税の前払い（Zonos）が要る国・要らない国</span></li>
+    <li><span class="ic">📮</span><span>アメリカは10月15日から、一般の郵便局でも出せる</span></li>
     <li><span class="ic">💴</span><span>Zonosの手数料はいくらか</span></li>
   </ul>
 </section>
 
+<section class="card" id="us">
+  <h2>アメリカ宛ての送り方</h2>
+  <div class="step"><span class="n">1</span><span>何を送る？<small>関税は「何を送るか」と「どう送るか」で決まります。</small></span></div>
+  <div class="route-cards two">
+    <div class="route-card">
+      <h4>📚 本・CDなど</h4>
+      <p>もともと、関税がかからない品目です。</p>
+    </div>
+  </div>
+  <div class="arrow">▼</div>
+  <div class="step"><span class="n">2</span><span>どう送る？<small>関税がかからない品目でも、送り方で変わります。</small></span></div>
+  <div class="route-cards two">
+    <div class="route-card us-ng">
+      <h4>📦 SpeedPAK Economy（CPaSS）</h4>
+      <p class="mark">❌</p>
+      <p><strong>関税がかかる</strong>（一律で請求されます）</p>
+    </div>
+    <div class="route-card us-ok">
+      <h4>📮 郵便（国際エアパケット）</h4>
+      <p class="mark">⭕️</p>
+      <p><strong>関税はかからない</strong></p>
+      <p>ただし、Zonosの手数料はかかります。</p>
+    </div>
+  </div>
+  <div class="arrow">▼</div>
+  <div class="step"><span class="n">3</span><span>郵便で送るなら<small>関税の前払い（Zonos）が必要です。</small></span></div>
+  <div class="route-cards two">
+    <div class="route-card">
+      <h4>🏤 どこで出せる？</h4>
+      <p><strong>10月15日から</strong>、一般の郵便局でも出せます。</p>
+    </div>
+    <div class="route-card">
+      <h4>💴 手数料は？</h4>
+      <p>関税がかからなくても、手数料がかかります。</p>
+      <p><a href="#fee">▼ 手数料のカードへ</a></p>
+    </div>
+  </div>
+  <p class="small-note">くわしい条件は、下の「アメリカ宛て：くわしく」に入れました。</p>
+</section>
+
+<details class="more" id="us-detail">
+  <summary>アメリカ宛て：くわしく知りたい人へ</summary>
+  <ul class="intro-list">
+    <li>2026年10月15日から、米国宛て郵便物の引受けを、原則としてすべての郵便局に拡大します。国際郵便を取り扱わない簡易郵便局は除きます。</li>
+    <li>理由は、米国税関・国境警備局（CBP）の事前申告の対象が広がったためです。2,500USドル以下の物品を含むすべての郵便物が対象です（書状・郵便葉書を除く）。</li>
+    <li>認定事業者はZonosとSafePackageの2社です。アプリなどで事前申告登録をして、ラベルに「DDP-（13桁の申告番号）」を書きます。</li>
+    <li>事業者の手数料がかかります（免税の場合も必要です）。</li>
+  </ul>
+  <p class="small-note">関税の考え方（何を送るか×どう送るか）は、エコノミー発送まるわかりガイドの「関税のはなし（アメリカ向け）」にもとづきます。</p>
+  <p class="source-note">出典：日本郵便 お知らせ「米国宛て郵便物の引受け対象の拡大」（2026年10月14日）<br>
+    👉 <a href="https://www.post.japanpost.jp/service/send/oversea/information/2026/1014_01.html" target="_blank" rel="noopener">https://www.post.japanpost.jp/service/send/oversea/information/2026/1014_01.html</a></p>
+</details>
+
+<h2 class="eu-title" id="eu">EU宛ての送り方</h2>
+
 <section class="card" id="flow">
-  <h2>送り方の決め方（3ステップ）</h2>
-  <div class="step"><span class="n">1</span><span>売れた国を見る</span></div>
+  <h2>EU編：送り方の決め方（3ステップ）</h2>
+  <div class="step"><span class="n">1</span><span>EUで売れた国を見る</span></div>
   <div class="arrow">▼</div>
   <div class="step"><span class="n">2</span><span>下の表で、その国の印（⭕️／❌）を見る<small>印は、日本郵便の公式の表にもとづきます。</small></span></div>
   <div class="arrow">▼</div>
@@ -223,7 +313,7 @@
 </section>
 
 <section class="card conclusion" id="answers">
-  <h2>結論（Q と答え）</h2>
+  <h2>結論（EU宛てのQと答え）</h2>
   <div class="qa">
     <div class="qq"><span class="q">Q1</span>送料の設定（シッピングポリシー）は「Economy International」のままでいい？</div>
     <div class="aa">答え　OKです。</div>
@@ -238,6 +328,11 @@
     <div class="qq"><span class="q">Q3</span>国ごとに何で送ればいい？</div>
     <div class="aa">答え　上の表の印で決めます。</div>
     <p class="ss">⭕️の国は郵便も選べて、SpeedPAKと安い方を選びます。両方❌の国はSpeedPAK Economyです。</p>
+  </div>
+  <div class="qa">
+    <div class="qq"><span class="q">Q4</span>アメリカ宛ては、小さな郵便局でも出せる？</div>
+    <div class="aa">答え　2026年10月15日から、原則すべての郵便局で出せます。</div>
+    <p class="ss">国際郵便を取り扱わない簡易郵便局は除きます（日本郵便の2026年10月14日のお知らせ）。</p>
   </div>
 </section>
 
@@ -258,17 +353,19 @@
     <li><strong>Ship&amp;co：</strong>Zonosを使ってラベルを作る方法の名前。</li>
     <li><strong>SpeedPAK Expedited：</strong>150ユーロを超える注文で、SpeedPAK Economyの代わりに使う送り方。</li>
     <li><strong>CBP：</strong>米国税関・国境警備局。</li>
+    <li><strong>SafePackage：</strong>アメリカ宛ての事前申告の認定事業者（Zonosのほかの1社）。</li>
+    <li><strong>DDP-（13桁の申告番号）：</strong>アメリカ宛ての事前申告のあと、ラベルに書く番号。</li>
   </ul>
 </section>
 
 <section class="card" id="fee">
-  <h2>Zonosの手数料はいくら？</h2>
-  <p>同じZonosでも、ラベルの作り方で手数料が変わります。日本郵便は、免税の場合でも手数料が発生すると案内しています（2026年10月14日のお知らせ）。</p>
+  <h2>Zonosの手数料はいくら？（アメリカ・EU）</h2>
+  <p>アメリカ宛てでもEU宛てでも、同じZonosでも、ラベルの作り方で手数料が変わります。日本郵便は、免税の場合でも手数料が発生すると案内しています（2026年10月14日のお知らせ）。</p>
   <div class="fee-cards">
     <div class="fee-card">
       <h4>① Zonos Prepay アプリ</h4>
-      <div class="big">非公開<small>利用者の報告では、1件あたり数百円〜750円ほど</small></div>
-      <p><strong>Zonosの手数料：</strong>金額は公開されていません。日本郵便の案内では「通関手数料＋為替コスト」です。</p>
+      <div class="big">約500円<small>筆者の体験</small></div>
+      <p><strong>Zonosの手数料：</strong>筆者の体験では約500円でした。金額は変わることがあるので、送るたびにアプリの画面で確認してください。日本郵便の案内では「通関手数料＋為替コスト」で、金額は公開されていません。</p>
       <p><strong>ラベル作成サービスの料金：</strong>公開されていません</p>
     </div>
     <div class="fee-card">
@@ -295,7 +392,7 @@
     <p>アプリやShip&amp;coで、この番号をどう入れるかは、それぞれの画面で確認してください。</p>
   </div>
   <p class="small-note">郵便料金そのものの払い方は、作り方ごとに確認してください。料金は変わることがあります。</p>
-  <p class="source-note">出典：免税でも手数料が発生する点は、日本郵便 お知らせ（2026年10月14日）。Ship&amp;coの料金は、Ship&amp;co の料金ページ。②（1.69ドル＋関税の10%）は、筆者のZonosアカウントの料金表示。アメリカ向け・スペイン向けの金額は、筆者の実測（スペイン向けは本番発送の記録）。</p>
+  <p class="source-note">出典：免税でも手数料が発生する点は、日本郵便 お知らせ（2026年10月14日）。Ship&amp;coの料金は、Ship&amp;co の料金ページ。①の約500円は、筆者の体験。②（1.69ドル＋関税の10%）は、筆者のZonosアカウントの料金表示。アメリカ向け・スペイン向けの金額は、筆者の実測（スペイン向けは本番発送の記録）。</p>
 </section>
 
 <div class="more-title">くわしく知りたい人へ</div>
@@ -329,7 +426,7 @@
   <div class="plain-box">
     <h3>どの郵便局で出せる？（事実）</h3>
     <ul class="intro-list">
-      <li><strong>アメリカ宛て：</strong>2026年10月15日から、原則すべての郵便局で引き受けます（日本郵便の2026年10月14日のお知らせ。国際郵便を扱わない簡易郵便局は除く）。</li>
+      <li><strong>アメリカ宛て：</strong>上の「アメリカ宛ての送り方」を見てください。</li>
       <li><strong>ヨーロッパ宛て：</strong>セミナー解説記事（PART4 e）では、国際郵便を扱うすべての郵便局で差し出せると書かれています。</li>
     </ul>
   </div>
@@ -360,24 +457,6 @@
   <p class="small-note">国際郵便のほうの呼び名は、この記事では公式の表記に合わせて「国際エアパケット」と書きます。「国際eパケット」と呼ばれる荷物との違いは、この記事では未確認です。</p>
   <p class="link-line">👉 日本郵便の改定の公式ページ：<a href="https://www.post.japanpost.jp/service/send/oversea/information/fee_revision_2027/" target="_blank" rel="noopener">https://www.post.japanpost.jp/service/send/oversea/information/fee_revision_2027/</a></p>
   <p class="link-line">👉 セミナー解説記事（PART4 d 料金表）：<a href="https://naokijodan.github.io/ebay-seminar-20261025-guide/#p4d" target="_blank" rel="noopener">https://naokijodan.github.io/ebay-seminar-20261025-guide/#p4d</a></p>
-</details>
-
-<details class="more" id="oct14">
-  <summary>2026年10月14日の公式のお知らせ（アメリカ宛ての話）</summary>
-  <p>日本郵便の2026年10月14日のお知らせは、「米国宛て郵便物の引受け対象の拡大」です。公式ページが言っていることは、次のとおりです。</p>
-  <ul class="intro-list">
-    <li>2026年10月15日から、米国宛て郵便物の引受けを、原則としてすべての郵便局に拡大します。国際郵便を取り扱わない簡易郵便局は除きます。</li>
-    <li>理由は、米国税関・国境警備局（CBP）の事前申告の対象が広がったためです。2,500USドル以下の物品を含むすべての郵便物が対象です（書状・郵便葉書を除く）。</li>
-    <li>認定事業者はZonosとSafePackageの2社です。アプリなどで事前申告登録をして、ラベルに「DDP-（13桁の申告番号）」を書きます。</li>
-    <li>事業者の手数料がかかります（免税の場合も必要です）。</li>
-  </ul>
-  <div class="caution-box">
-    <h3>範囲に注意</h3>
-    <p>このお知らせは<strong>アメリカ宛て</strong>の話です。EU宛てが一般の郵便局で出せるかは、このページには書かれていません。</p>
-    <p>EU宛てについては、セミナー解説記事に「ヨーロッパ向けは、国際郵便を扱うすべての郵便局で差し出せます」とあります（日本郵便の国別のお知らせにもとづく記載）。窓口で出す前に、念のため確認してください。</p>
-  </div>
-  <p class="source-note">出典：日本郵便 お知らせ「米国宛て郵便物の引受け対象の拡大」（2026年10月14日）<br>
-    👉 <a href="https://www.post.japanpost.jp/service/send/oversea/information/2026/1014_01.html" target="_blank" rel="noopener">https://www.post.japanpost.jp/service/send/oversea/information/2026/1014_01.html</a></p>
 </details>
 
 <details class="more" id="todo">
