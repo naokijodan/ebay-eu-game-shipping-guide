@@ -119,6 +119,10 @@
   .us-row.ng { border-color: var(--wrong-text); }
   .us-row.ok { border-color: var(--correct-text); background: var(--correct-bg); }
   .us-row b { font-size: var(--fs-label); }
+  .fork { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .fbtn { display: block; text-align: center; text-decoration: none; font-weight: bold; font-size: var(--fs-sub); color: #fff; border-radius: 999px; padding: 10px 6px; }
+  .f-us { background: var(--accent); } .f-eu { background: var(--gray); }
+  @media (max-width: 700px) { header.page-title { padding: 18px 16px; } header.page-title h1 { font-size: 20px; } .hero-lead { font-size: 15px; margin-top: 10px; } #start { padding: 14px 16px; } #start h2 { margin-bottom: 10px; } }
   .paths.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .eu-title { font-size: var(--fs-heading); color: var(--navy); margin: 26px 4px 10px; border-bottom: 3px solid var(--accent); padding-bottom: 4px; }
   .path { display: flex; flex-direction: column; align-items: stretch; min-width: 0; }
@@ -164,7 +168,6 @@
 <header class="page-title">
   <h1>エコノミー発送の送り方ガイド（アメリカ・EU）</h1>
   <p class="hero-lead">アメリカかEUの人に商品が売れた。エコノミーで、何で送ればいい？<br>下の図と表を見れば、送り方がわかります。</p>
-  <a class="jump" href="#start">▼ 送り方の入り口へ</a>
   <p class="notice">公開日 2026-10-26 ／ 更新日 2026-10-26</p>
 </header>
 <main>
@@ -173,29 +176,9 @@
 
 <section class="card" id="start">
   <h2>まず、売れた国は？</h2>
-  <div class="step"><span class="n">1</span><span>売れた国を見る<small>下の2つから選んでください。</small></span></div>
-  <div class="arrow">▼</div>
-  <div class="paths two">
-    <div class="path p1">
-      <div class="pill">アメリカ</div>
-      <div class="arrow">▼</div>
-      <div class="goal">
-        <div class="gicon">🇺🇸</div>
-        <div class="gtitle">アメリカ編へ</div>
-        <p class="gsub">郵便なら、Zonosで関税を前払い。10月15日から一般の郵便局でも出せます。</p>
-        <a class="jump" href="#us">▼ アメリカ編へ</a>
-      </div>
-    </div>
-    <div class="path p2">
-      <div class="pill">EU</div>
-      <div class="arrow">▼</div>
-      <div class="goal">
-        <div class="gicon">🇪🇺</div>
-        <div class="gtitle">EU編へ（3ステップ）</div>
-        <p class="gsub">国ごとの⭕️❌の表で、送り方を決めます。</p>
-        <a class="jump" href="#flow">▼ EU編へ</a>
-      </div>
-    </div>
+  <div class="fork">
+    <a class="fbtn f-us" href="#us">🇺🇸 アメリカ</a>
+    <a class="fbtn f-eu" href="#flow">🇪🇺 EU</a>
   </div>
 </section>
 
@@ -204,7 +187,7 @@
   <ul class="know">
     <li><span class="ic">🌍</span><span>アメリカ・EUの、エコノミーでの送り方</span></li>
     <li><span class="ic">💳</span><span>関税の前払い（Zonos）が要る国・要らない国</span></li>
-    <li><span class="ic">📮</span><span>アメリカは10月15日から、一般の郵便局でも出せる</span></li>
+    <li><span class="ic">📮</span><span>アメリカは10月15日から、原則どの郵便局でも出せる（簡易郵便局を除く）</span></li>
     <li><span class="ic">💴</span><span>Zonosの手数料はいくらか</span></li>
   </ul>
 </section>
@@ -240,11 +223,11 @@
   </div>
   <p class="small-note">関税の有無は、筆者が Zonos で見積もった結果（2026年10月26日、アメリカ宛て・日本製・50ドル）。関税は変わることがあるので、送る前に確認してください。</p>
   <div class="arrow">▼</div>
-  <div class="step"><span class="n">2</span><span>A・Bどちらも、郵便で送るなら<small>関税の前払い（Zonos）が必要です。</small></span></div>
+  <div class="step"><span class="n">2</span><span>郵便で送るなら<small>A：Zonosで関税を前払いします。<br>B：関税はかかりませんが、Zonosで事前に申告します（手数料がかかります）。</small></span></div>
   <div class="route-cards two">
     <div class="route-card">
       <h4>🏤 どこで出せる？</h4>
-      <p><strong>10月15日から</strong>、一般の郵便局でも出せます。</p>
+      <p><strong>10月15日から</strong>、原則どの郵便局でも出せます（簡易郵便局を除く）。</p>
     </div>
     <div class="route-card">
       <h4>💴 手数料は？</h4>
@@ -442,7 +425,7 @@
   </div>
   <div class="ok-box">
     <h3>私の考え</h3>
-    <p>一般の郵便局でもDDPで出せるようになったので、ゲーム・CD・漫画のような小さくて軽いものは、国際郵便で送るほうがよいと考えています。ただし、SpeedPAK Economyが悪いわけではありません。</p>
+    <p>原則どの郵便局でもDDPで出せるようになったので（簡易郵便局を除く）、ゲーム・CD・漫画のような小さくて軽いものは、国際郵便で送るほうがよいと考えています。ただし、SpeedPAK Economyが悪いわけではありません。</p>
     <p>ポリシーは「Economy International」のままで、国ごとに送料と手数料を比べて選んでください。</p>
   </div>
   <p class="small-note">「私の考え」は筆者の見解です。公式の案内ではありません。</p>
