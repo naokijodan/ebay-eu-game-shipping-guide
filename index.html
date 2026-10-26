@@ -91,6 +91,8 @@
   table.data.route tr.r-ddp th { box-shadow: inset 4px 0 0 var(--accent); }
   table.data.route tr.r-dap th { box-shadow: inset 4px 0 0 var(--gray); }
   table.data.route tr.r-none th { box-shadow: inset 4px 0 0 var(--wrong-text); }
+  .q-line { font-weight:bold; margin-top: 14px; }
+  .q-line:first-child { margin-top: 0; }
   .q { display:inline-block; background: var(--accent); color:#fff; font-weight:bold; border-radius: 999px; padding: 0 12px; margin-right: 6px; }
   .conclusion p { margin: 8px 0; }
   table.data.mark td, table.data.mark th { white-space: normal; }
@@ -116,9 +118,12 @@
 <section class="card conclusion">
   <h2>結論</h2>
   <div class="ok-box">
-    <p><strong>Q1　OKです。</strong>ポリシーが「Economy International Shipping」（日本郵便のエコノミーでの約束）なら、SpeedPAK Economyで送っても、日本郵便で送ってもかまいません。</p>
-    <p><strong>Q2　ゲームだから郵便が必須、ということはありません。</strong>国ごとに安い方を選びます。郵便で送るときだけ、Zonosで関税の前払いが要ります。</p>
-    <p><strong>Q3　ドイツ・オーストリア・ベルギー・ポルトガルは今までどおりSpeedPAK。</strong>デンマーク・フィンランド・フランスは郵便（Zonos）も選べるようになりました。</p>
+    <p class="q-line"><span class="q">Q1</span>ポリシーが「Economy International」でも、SpeedPAK Economyで送って大丈夫？</p>
+    <p><strong>答え　OKです。</strong>ポリシーが「Economy International Shipping」（日本郵便のエコノミーでの約束）なら、SpeedPAK Economyで送っても、日本郵便で送ってもかまいません。</p>
+    <p class="q-line"><span class="q">Q2</span>ゲームは、Zonosを使って送るべき？</p>
+    <p><strong>答え　ゲームだから郵便が必須、ということはありません。</strong>国ごとに安い方を選びます。郵便で送るときだけ、Zonosで関税の前払いが要ります。</p>
+    <p class="q-line"><span class="q">Q3</span>国ごとの送り方は、今までとどう変わる？</p>
+    <p><strong>答え　ドイツ・オーストリア・ベルギー・ポルトガルは今までどおりSpeedPAK。</strong>デンマーク・フィンランド・フランスは郵便（Zonos）も選べるようになりました。</p>
     <ul class="intro-list">
       <li><strong>チェコ：</strong>郵便ではDDPもDAPも使えないので、SpeedPAK Economyへ切り替えます（いちばん大きな変更）。</li>
       <li><strong>「受取人払いだけOK」の11か国：</strong>郵便なら受取人払い（DAP）で送ります。</li>
