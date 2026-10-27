@@ -162,6 +162,31 @@
     details.more { padding: 4px 14px; }
     .path .arrow { display: block; }
   }
+  /* codes section */
+  #codes { border: 3px solid var(--accent); }
+  #codes .codes-wrap { margin: 14px 0; border: 1px solid #ddd; border-radius: var(--radius-band); overflow: hidden; }
+  table.codes { border-collapse: collapse; width: 100%; background: #fff; font-size: var(--fs-sub); }
+  table.codes th, table.codes td { border-bottom: 1px solid #e3e3e3; padding: 12px 12px; text-align: left; vertical-align: top; line-height: 1.6; }
+  table.codes thead th { background: var(--navy); color: #fff; font-size: var(--fs-label); text-align: center; }
+  table.codes tbody th { background: #f5f7fa; font-weight: bold; }
+  table.codes td.en { font-size: var(--fs-label); overflow-wrap: anywhere; }
+  table.codes td.cd { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 22px; font-weight: bold; color: #0b3d91; letter-spacing: 0.02em; white-space: nowrap; text-align: center; }
+  table.codes tbody tr:last-child th, table.codes tbody tr:last-child td { border-bottom: 0; }
+  #codes .caution-box h3 { font-size: var(--fs-heading); color: var(--wrong-text); }
+  #codes .caution-box ul { margin: 0; padding-left: 1.2em; }
+  #codes .caution-box li { margin-bottom: 8px; }
+  #codes .caution-box code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-weight: bold; white-space: nowrap; }
+  #codes ul.notes { font-size: var(--fs-note); color: #555; padding-left: 1.2em; margin: 8px 0; line-height: 1.7; }
+  #codes ul.notes code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+  @media (max-width: 700px) {
+    table.codes, table.codes tbody, table.codes tr, table.codes th, table.codes td { display: block; width: 100%; }
+    table.codes thead { display: none; }
+    table.codes tr { border-bottom: 3px solid var(--accent); padding: 6px 0; }
+    table.codes tbody tr:last-child { border-bottom: 0; }
+    table.codes th, table.codes td { border-bottom: 0; padding: 6px 12px; }
+    table.codes td::before { content: attr(data-label); display: block; font-size: var(--fs-note); font-weight: normal; color: #555; }
+    table.codes td.cd { text-align: left; font-size: 24px; }
+  }
 </style>
 </head>
 <body>
@@ -222,6 +247,7 @@
     </div>
   </div>
   <p class="small-note">関税の有無は、筆者が Zonos で見積もった結果（2026年10月26日、アメリカ宛て・日本製・50ドル）。関税は変わることがあるので、送る前に確認してください。</p>
+  <p class="link-line">品名とコードの例は<a href="#codes">『申告に使うコード』</a>の欄を見てください。</p>
   <p class="small-note">📝 <strong>申告する金額は、販売価格から送料を引いた商品代金です。</strong>いちばんわかりやすいのは<a href="https://naokijodan.github.io/ebay-seminar-20261025-guide/slides.pdf#page=3" target="_blank" rel="noopener">セミナーのスライド（PDF・3〜11枚目）</a>です。文章で読むなら<a href="https://naokijodan.github.io/ebay-declared-value-guide/" target="_blank" rel="noopener">『税関申告価額ガイド』</a>。</p>
   <div class="arrow">▼</div>
   <div class="step"><span class="n">2</span><span>郵便で送るなら<small>A：Zonosで関税を前払いします。<br>B：関税はかかりませんが、Zonosで事前に申告します（手数料がかかります）。</small></span></div>
@@ -355,6 +381,7 @@
 <section class="card" id="fee">
   <h2>Zonosの手数料はいくら？（アメリカ・EU）</h2>
   <p>アメリカ宛てでもEU宛てでも、同じZonosでも、ラベルの作り方で手数料が変わります。日本郵便は、免税の場合でも手数料が発生すると案内しています（2026年10月14日のお知らせ）。</p>
+  <p class="link-line">申告に使うコードは、下の<a href="#codes">『申告に使うコード』</a>の欄にまとめました。</p>
   <div class="fee-cards">
     <div class="fee-card">
       <h4>① Zonos Prepay アプリ</h4>
@@ -387,6 +414,39 @@
   </div>
   <p class="small-note">郵便料金そのものの払い方は、作り方ごとに確認してください。料金は変わることがあります。</p>
   <p class="source-note">出典：免税でも手数料が発生する点は、日本郵便 お知らせ（2026年10月14日）。Ship&amp;coの料金は、Ship&amp;co の料金ページ。①の約500円は、筆者の体験。②（1.69ドル＋関税の10%）は、筆者のZonosアカウントの料金表示。アメリカ向け・スペイン向けの金額は、筆者の実測（スペイン向けは本番発送の記録）。</p>
+</section>
+
+<section class="card" id="codes">
+  <h2>申告に使うコード（関税0の例）</h2>
+  <p>送り状（税関の申告）には、品名とコードを書きます。アメリカは10桁、ヨーロッパは6桁のコードを使います。下の4つは、アメリカ宛てで関税がかからない商品の例です。</p>
+  <div class="codes-wrap">
+    <table class="codes">
+      <thead><tr><th>商品</th><th>品名（英語・そのまま使える例）</th><th>アメリカ（10桁）</th><th>ヨーロッパ（6桁）</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">ゲームディスク（PS・Xboxなど）</th><td class="en" data-label="品名（英語・そのまま使える例）">Used Game Soft CD No Battery</td><td class="cd" data-label="アメリカ（10桁）">8523.49.4000</td><td class="cd" data-label="ヨーロッパ（6桁）">852349</td></tr>
+        <tr><th scope="row">ゲームカード（Switchなど）</th><td class="en" data-label="品名（英語・そのまま使える例）">Used Game Soft Card (Nintendo Switch) No Battery</td><td class="cd" data-label="アメリカ（10桁）">8523.51.0000</td><td class="cd" data-label="ヨーロッパ（6桁）">852351</td></tr>
+        <tr><th scope="row">ゲーム用でないキャラクターカード（紙）</th><td class="en" data-label="品名（英語・そのまま使える例）">Printed collectible character cards, non-game, paper</td><td class="cd" data-label="アメリカ（10桁）">4911.99.6000</td><td class="cd" data-label="ヨーロッパ（6桁）">491199</td></tr>
+        <tr><th scope="row">本・漫画</th><td class="en" data-label="品名（英語・そのまま使える例）">Printed books</td><td class="cd" data-label="アメリカ（10桁）">4901.99.0093</td><td class="cd" data-label="ヨーロッパ（6桁）">490199</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="caution-box">
+    <h3>まぎらわしいもの（混ぜないでください）</h3>
+    <ul>
+      <li>ポケモン・遊戯王などの「ゲーム用」トレカは <code>9504.40.0000</code> です。アメリカ宛ては関税12.5%がかかります。上の「ゲーム用でないカード」とは別です。</li>
+      <li>ゲーム機本体・コントローラーなどは <code>9504.50.0000</code> です。アメリカ宛ては関税12.5%がかかります。ゲームソフトとは別です。</li>
+      <li>フィギュア・おもちゃは <code>9503.00.0090</code> です。アメリカ宛ては関税12.5%がかかります。</li>
+      <li>ゲームソフトの品名に「Card」とだけ書くと、トレカとまちがえられるおそれがあります。「Game Soft」と「Nintendo Switch」を入れてください。</li>
+    </ul>
+  </div>
+  <ul class="notes">
+    <li>ディスクのゲーム → <code>8523.49.4000</code>、カード型のゲーム → <code>8523.51.0000</code> と、形で分けます。</li>
+    <li>ファミコン・スーパーファミコン・ゲームボーイなどの古いカセットは、分類を確認できていないため、この表に入れていません。</li>
+    <li><code>4911.99.6000</code> は、オフセット印刷のカードの番号です。</li>
+    <li><code>4901.99.0093</code> は、49ページ以上の本の番号です。</li>
+    <li>ヨーロッパの関税・VATは、この表では扱いません。</li>
+  </ul>
+  <p class="source-note">出典：コードと「無税」はアメリカの公式関税表（USITC <a href="https://hts.usitc.gov/" target="_blank" rel="noopener">https://hts.usitc.gov/</a>）。Switchのゲームカードは米国税関の裁定 N352864（2025年9月15日）・N355055（2025年11月13日）。関税12.5%と0は、筆者のZonos見積もり（2026年10月26日、日本製・1品50ドル）。本は同じ分類の別の番号（4901.99.0070）で見積もりました。</p>
 </section>
 
 <div class="more-title">くわしく知りたい人へ</div>
