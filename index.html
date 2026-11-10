@@ -50,6 +50,13 @@
     padding: var(--pad-roomy); margin: 16px 0; font-weight: bold; font-size: var(--fs-heading); color: #0b3d91; text-align: center;
   }
   .caution-box { background: var(--wrong-bg); border: var(--border-w) solid var(--wrong-text); border-radius: var(--radius-box); padding: var(--pad-roomy); margin: 16px 0; }
+  .change-box { background: #fff4d6; border: var(--border-w) solid #e09a00; border-left-width: 8px; border-radius: var(--radius-box); padding: var(--pad-roomy); margin: 16px 0; }
+  .change-box h3 { margin-top: 0; color: #7a4b00; }
+  .change-box p:last-child { margin-bottom: 0; }
+  .change-box ul { margin: 8px 0; padding-left: 1.2em; }
+  .change-box li { margin-bottom: 6px; }
+  .chg { display: inline-block; background: #e09a00; color: #fff; font-size: var(--fs-note); font-weight: bold; padding: 1px 8px; border-radius: 999px; margin-left: 6px; white-space: nowrap; }
+  .start-change { background: #fff4d6; border: var(--border-w) solid #e09a00; border-radius: var(--radius-band); padding: 10px 14px; margin: 14px 0 0; font-weight: bold; }
   .ok-box { background: var(--correct-bg); border: var(--border-w) solid var(--correct-text); border-radius: var(--radius-box); padding: var(--pad-roomy); margin: 16px 0; }
   .plain-box { background: #f5f5f5; border: var(--border-w) solid var(--gray); border-radius: var(--radius-box); padding: var(--pad-roomy); margin: 16px 0; }
   .ok-box h3, .caution-box h3, .plain-box h3 { margin-top: 0; }
@@ -210,6 +217,7 @@
     <a class="fbtn f-us" href="#us">🇺🇸 アメリカ</a>
     <a class="fbtn f-eu" href="#flow">🇪🇺 EU</a>
   </div>
+  <p class="start-change">⚠️ 2026年11月1日から、EUの一部の国の扱いが変わりました（ベルギー・スウェーデン・ドイツ）→ <a href="#change-1101">変更点を見る</a></p>
 </section>
 
 <section class="card" id="know">
@@ -286,6 +294,25 @@
 
 <h2 class="eu-title" id="eu">EU宛ての送り方</h2>
 
+<div class="change-box" id="change-1101">
+  <h3>2026年11月1日からの変更（日本郵便）</h3>
+  <p class="small-note">確認日 2026-11-10</p>
+  <p>この記事の国の表と、「11か国」「5か国」という数は、10月1日の日本郵便のお知らせをもとにしたものです。11月1日から、次の3つの国の扱いが変わりました。</p>
+  <div class="table-wrap"><table class="data mark"><thead><tr><th>国</th><th>前払い<br><span class="sub">（変更前→変更後）</span></th><th>受取人払い<br><span class="sub">（変更前→変更後）</span></th></tr></thead><tbody><tr><th scope="row">ベルギー</th><td class="mk">❌→⭕️</td><td class="mk ng">❌のまま</td></tr><tr><th scope="row">スウェーデン</th><td class="mk ok">⭕️のまま</td><td class="mk">⭕️→❌</td></tr><tr><th scope="row">ドイツ</th><td class="mk ng">❌のまま</td><td class="mk ng">❌のまま</td></tr></tbody></table></div>
+  <ul>
+    <li>ドイツは表の⭕️❌は変わりません。そのうえで、ネット販売（BtoC）の郵便物は差し出せなくなりました（11月4日の条件表）。</li>
+    <li>EUの国のうち、郵便で関税を前払いできる国は、11か国から12か国になりました（ベルギーが加わりました）。</li>
+    <li>前払いも受取人払いも❌の国は、5か国から4か国になりました。</li>
+    <li>Zonosのアプリの送り先の一覧には、グアドループ、仏領ギアナ、マルティニーク、レユニオン、モナコも出ています。日本郵便の表でも、この5つは前払い⭕️です。この記事の表はEU加盟27か国だけなので、載せていません。</li>
+    <li>アンドラはZonosのアプリの一覧にありますが、日本郵便の表にはありません。郵便で送れるかどうかは、確認できていません（未確認）。</li>
+    <li>ベルギーにかかるZonosの国別の追加料金は、確認できていません（未確認）。</li>
+  </ul>
+  <p class="source-note">出典：日本郵便 お知らせ（続報5、2026年10月30日）<br>
+    👉 <a href="https://www.post.japanpost.jp/service/send/oversea/information/2026/1030_01.html" target="_blank" rel="noopener">https://www.post.japanpost.jp/service/send/oversea/information/2026/1030_01.html</a><br>
+    出典：日本郵便 お知らせ（条件表、2026年11月4日）<br>
+    👉 <a href="https://www.post.japanpost.jp/service/send/oversea/information/2026/1104_01.html" target="_blank" rel="noopener">https://www.post.japanpost.jp/service/send/oversea/information/2026/1104_01.html</a></p>
+</div>
+
 <div class="caution-box" id="correction">
   <h3>訂正とおわび（2026-10-29）</h3>
   <p>この記事の前の版で、「受取人払いだけ⭕️の11か国は、郵便で送れる」と書きました。これは筆者の間違いでした。申し訳ありません。</p>
@@ -350,7 +377,8 @@
 <section class="card" id="table">
   <h2>国の表（日本郵便の国別対応表・EU）</h2>
   <p>⭕️は日本郵便が受け付ける、❌は受け付けません。eBayが150ユーロ未満の注文でVAT（ヨーロッパの消費税）を集める扱い（IOSS有り）の場合の表です。</p>
-  <div class="table-wrap"><table class="data mark"><thead><tr><th>国</th><th>郵便で関税を前払い<br><span class="sub">（Zonosを使う）</span></th><th>郵便で関税を受取人払い</th></tr></thead><tbody><tr class="gh gh1"><th colspan="3">前払いOK ⭕️（11か国）→ 郵便ならShip&amp;co（Zonos）で関税を前払い</th></tr><tr><th scope="row">イタリア</th><td class="mk ok">⭕️</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">エストニア</th><td class="mk ok">⭕️</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">オランダ</th><td class="mk ok">⭕️</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">スウェーデン</th><td class="mk ok">⭕️</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">スペイン</th><td class="mk ok">⭕️</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">スロバキア</th><td class="mk ok">⭕️</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">デンマーク</th><td class="mk ok">⭕️</td><td class="mk ng">❌</td></tr><tr><th scope="row">フィンランド</th><td class="mk ok">⭕️</td><td class="mk ng">❌</td></tr><tr><th scope="row">フランス</th><td class="mk ok">⭕️</td><td class="mk ng">❌</td></tr><tr><th scope="row">マルタ</th><td class="mk ok">⭕️</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">ルクセンブルク</th><td class="mk ok">⭕️</td><td class="mk ng">❌</td></tr><tr class="gh gh2"><th colspan="3">郵便は受取人払いだけ（11か国）→ eBayでは使えない → SpeedPAK Economy</th></tr><tr><th scope="row">アイルランド</th><td class="mk ng">❌</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">キプロス</th><td class="mk ng">❌</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">ギリシャ</th><td class="mk ng">❌</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">クロアチア</th><td class="mk ng">❌</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">スロベニア</th><td class="mk ng">❌</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">ハンガリー</th><td class="mk ng">❌</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">ブルガリア</th><td class="mk ng">❌</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">ポーランド</th><td class="mk ng">❌</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">ラトビア</th><td class="mk ng">❌</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">リトアニア</th><td class="mk ng">❌</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">ルーマニア</th><td class="mk ng">❌</td><td class="mk ok">⭕️</td></tr><tr class="gh gh3"><th colspan="3">郵便は両方❌（5か国）→ 郵便では送れない → SpeedPAK Economy</th></tr><tr><th scope="row">オーストリア</th><td class="mk ng">❌</td><td class="mk ng">❌</td></tr><tr><th scope="row">チェコ</th><td class="mk ng">❌</td><td class="mk ng">❌</td></tr><tr><th scope="row">ドイツ</th><td class="mk ng">❌</td><td class="mk ng">❌</td></tr><tr><th scope="row">ベルギー</th><td class="mk ng">❌</td><td class="mk ng">❌</td></tr><tr><th scope="row">ポルトガル</th><td class="mk ng">❌</td><td class="mk ng">❌</td></tr></tbody></table></div>
+  <div class="table-wrap"><table class="data mark"><thead><tr><th>国</th><th>郵便で関税を前払い<br><span class="sub">（Zonosを使う）</span></th><th>郵便で関税を受取人払い</th></tr></thead><tbody><tr class="gh gh1"><th colspan="3">前払いOK ⭕️（11か国）→ 郵便ならShip&amp;co（Zonos）で関税を前払い</th></tr><tr><th scope="row">イタリア</th><td class="mk ok">⭕️</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">エストニア</th><td class="mk ok">⭕️</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">オランダ</th><td class="mk ok">⭕️</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">スウェーデン<span class="chg">11/1変更</span></th><td class="mk ok">⭕️</td><td class="mk ng">⭕️→❌</td></tr><tr><th scope="row">スペイン</th><td class="mk ok">⭕️</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">スロバキア</th><td class="mk ok">⭕️</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">デンマーク</th><td class="mk ok">⭕️</td><td class="mk ng">❌</td></tr><tr><th scope="row">フィンランド</th><td class="mk ok">⭕️</td><td class="mk ng">❌</td></tr><tr><th scope="row">フランス</th><td class="mk ok">⭕️</td><td class="mk ng">❌</td></tr><tr><th scope="row">マルタ</th><td class="mk ok">⭕️</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">ルクセンブルク</th><td class="mk ok">⭕️</td><td class="mk ng">❌</td></tr><tr class="gh gh2"><th colspan="3">郵便は受取人払いだけ（11か国）→ eBayでは使えない → SpeedPAK Economy</th></tr><tr><th scope="row">アイルランド</th><td class="mk ng">❌</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">キプロス</th><td class="mk ng">❌</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">ギリシャ</th><td class="mk ng">❌</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">クロアチア</th><td class="mk ng">❌</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">スロベニア</th><td class="mk ng">❌</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">ハンガリー</th><td class="mk ng">❌</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">ブルガリア</th><td class="mk ng">❌</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">ポーランド</th><td class="mk ng">❌</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">ラトビア</th><td class="mk ng">❌</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">リトアニア</th><td class="mk ng">❌</td><td class="mk ok">⭕️</td></tr><tr><th scope="row">ルーマニア</th><td class="mk ng">❌</td><td class="mk ok">⭕️</td></tr><tr class="gh gh3"><th colspan="3">郵便は両方❌（5か国）→ 郵便では送れない → SpeedPAK Economy</th></tr><tr><th scope="row">オーストリア</th><td class="mk ng">❌</td><td class="mk ng">❌</td></tr><tr><th scope="row">チェコ</th><td class="mk ng">❌</td><td class="mk ng">❌</td></tr><tr><th scope="row">ドイツ<span class="chg">11/1変更</span><br><span class="sub">ネット販売（BtoC）は差し出せなくなりました</span></th><td class="mk ng">❌</td><td class="mk ng">❌</td></tr><tr><th scope="row">ベルギー<span class="chg">11/1変更</span></th><td class="mk ok">❌→⭕️</td><td class="mk ng">❌</td></tr><tr><th scope="row">ポルトガル</th><td class="mk ng">❌</td><td class="mk ng">❌</td></tr></tbody></table></div>
+  <p class="small-note">「11/1変更」の印の行は、2026年11月1日から変わりました。くわしくは上の<a href="#change-1101">「2026年11月1日からの変更」</a>を見てください。</p>
   <p class="small-note">⭕️は日本郵便が受け付けるかどうかです。eBayの注文（150ユーロ以下）は関税込み（DDP）が必須なので、使えるのは「前払い」の列だけです。</p>
   <p class="source-note">出典：日本郵便 お知らせ（続報4、2026年10月1日）の国別表（EU27か国分を抜き出しています）<br>
     👉 <a href="https://www.post.japanpost.jp/service/send/oversea/information/2026/1001_01.html" target="_blank" rel="noopener">https://www.post.japanpost.jp/service/send/oversea/information/2026/1001_01.html</a></p>
